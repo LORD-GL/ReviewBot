@@ -8,21 +8,24 @@
 """
 import telebot
 
-HTTP_API = ""
+HTTP_API = "5056002443:AAHDdOkl2s0xPSrAKL0Hj85BkbMsdpNd1yQ"
 
-bot = telebot.Telebot(HTTP_API)
+bot = telebot.TeleBot(HTTP_API)
 
-def handlers():
-    @bot.message_handler(command=['start'])
-    def start(message):
-        IntroText = """
-        Hi, welcome to the students goverment!
-        Leave your review:
-        """
-        bot.send_message(message.chat.id, IntroText)
+@bot.message_handler(commands=["start"])
+def start(message):
+    IntroText = """
+Hi, welcome to the students government!
+Leave your review:
+    """
+    bot.send_message(message.chat.id, IntroText)
 
-    @bot.message_handler(content_types=["text"])
-    def writeRev(message):
-        file = open('data.txt', 'a')
-        file.write(f"\n-----\nName: {message.from_user} \nid: {message.chat.id} \ndate: {message.date}\n----\n")
-        file.close()
+@bot.message_handler(content_types=["text"])
+def writeRev(message):
+    file = open('data.txt', 'a')
+    file.write(f"Name: {message.chat.username}\n")
+    file.write(f"id: {message.chat.id}\n")
+    file.write(f"date: {message.text}\n----\n")
+    file.close()
+
+bot.polling(none_stop=True, interval=0)
