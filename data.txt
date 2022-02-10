@@ -1,0 +1,10 @@
+Name: LORD_GL
+id: 549745613
+Text: I would like to be a part of SG! I love U!
+Date: 2022-02-10 13:17:22.889510
+----
+Name: LORD_GL
+id: 549745613
+Text: I hate U!
+Date: 2022-02-10 13:17:29.539672
+----
