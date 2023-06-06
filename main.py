@@ -8,7 +8,7 @@
 """
 import telebot, datetime
 
-HTTP_API = "5056002443:AAHDdOkl2s0xPSrAKL0Hj85BkbMsdpNd1yQ"
+HTTP_API = ""
 
 bot = telebot.TeleBot(HTTP_API)
 
